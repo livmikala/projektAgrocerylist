@@ -1,6 +1,15 @@
 body {
     font-family: 'Times New Roman', Times, serif;
-    max-width: 600px;
-    margin: 50 px auto;
+    max-width: 500px;
+    margin: 50px auto;
     text-align: center;
+    background-color: whitesmoke;
+}
+
+input {
+    padding: 5px;
+}
+
+button {
+    padding: 5px;
 }
