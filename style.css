@@ -1,5 +1,9 @@
-body {
+* {
     font-family: 'Times New Roman', Times, serif;
+}
+
+body {
+    
     max-width: 500px;
     margin: 50px auto;
     text-align: center;
@@ -13,4 +17,30 @@ input {
 button {
     padding: 5px;
     cursor: pointer;
+}
+
+ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+li {
+    margin: 5px 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.add-item {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.sort-buttons {
+    margin-bottom: 20px;
+}
+
+.sort-buttons button {
+    margin: 0 5px;
 }
