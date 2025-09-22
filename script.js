@@ -15,10 +15,38 @@ addBtn.addEventListener("click", () => {
     const price = parseFloat(itemPrice.value);
 
     if (name && !isNaN(price)) {
-        itemList.push({ navn: name, pris: price});
+        item.push({ navn: name, pris: price});
         itemName.value = "";
         itemPrice.value = "";
+        updateList(); //tilføjer varer til listen
     } else {
         alert("Varer skal være med bogstaver og pris med tal")
     }
 });
+
+//function til at opdatere listen på siden
+
+function updateList() {
+    itemList.innerHTML = ""; //Rydder listen, så varerne ikke bliver skrevet dobbelt
+    let total = 0; //Starter samlet pris ved 0
+
+    item.forEach((varer, index) => { //går igennem alle varer i arrayet én gang
+        total += varer.pris; //lægger pris sammen
+
+        const li = document.createElement("li"); //tilføjer til listen(li)
+        li.textContent = `${varer.navn} - ${varer.pris} kr`;
+
+        //fjern knap
+        const removeBtn = document.createElement("button");
+        removeBtn.textContent = "Fjern";
+        removeBtn.addEventListener("click", () => {
+            item.splice(index, 1); //fjerner varer fra listen
+            updateList(); //opdaterer listen
+        });
+
+        li.appendChild(removeBtn); //tilføjer fjernknappen til listen
+        itemList.appendChild(li); //tilføjer li til ul
+    });
+
+    totalPrice.textContent = total; //viser samlet pris
+}
