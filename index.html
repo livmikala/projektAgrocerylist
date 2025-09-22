@@ -9,14 +9,16 @@
 <body>
     <h1>Indkøbsliste</h1>
 
-    <input type="text" id="itemName" placeholder="Vare">
+    <div class="add-item"><input type="text" id="itemName" placeholder="Vare">
     <input type="number" id="itemPrice" placeholder="Pris">
-
-    <button id="addBtn">Tilføj til liste</button>
+    <button id="addBtn">Tilføj til liste</button></div>
+    
+    <div class="sort-buttons">
     <button id="sortPriceBtn">Sorter efter pris</button>
-    <button id="sortNameBtn">Sorter efter A-Å</button>
+    <button id="sortNameBtn">Sorter efter A-Å</button></div>
 
     <ul id="itemList"></ul> <!-- ul er tom, fordi listen bliver tilføjet med js -->
+    <p>Samlet pris: <span id="totalPrice"></span></p>
     <script src="script.js"></script>
 </body>
 </html>
