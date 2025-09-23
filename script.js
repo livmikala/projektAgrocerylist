@@ -30,7 +30,7 @@ sortPriceBtn.addEventListener("click", () => {
 });
 
 sortNameBtn.addEventListener("click", () => {
-    item.sort((a, b) => a.navn.localeCompare(b.navn));
+    item.sort((a, b) => a.navn.localeCompare(b.navn)); //localeCompare er for at den alfabetiske sortering også kan læse æ,ø,å
     updateList();
 });
 
