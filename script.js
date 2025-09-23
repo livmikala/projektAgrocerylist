@@ -24,6 +24,16 @@ addBtn.addEventListener("click", () => {
     }
 });
 
+sortPriceBtn.addEventListener("click", () => {
+    item.sort((a, b) => a.pris - b.pris);
+    updateList();
+});
+
+sortNameBtn.addEventListener("click", () => {
+    item.sort((a, b) => a.navn.localeCompare(b.navn));
+    updateList();
+});
+
 //function til at opdatere listen på siden
 
 function updateList() {
