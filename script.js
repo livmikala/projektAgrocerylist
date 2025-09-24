@@ -8,14 +8,15 @@ const sortNameBtn = document.getElementById("sortNameBtn");
 const itemList = document.getElementById("itemList");
 const totalPrice = document.getElementById("totalPrice");
 
-let item = []; //liste kommer her i array'et efterhånden som varer bliver tilføjet
+let item = []; //liste kommer her i array'et efterhånden som varer bliver tilføjet, så ændres hele tiden
 
 addBtn.addEventListener("click", () => {
+    
     const name = itemName.value.trim();
     const price = parseFloat(itemPrice.value);
 
     if (name && !isNaN(price)) {
-        item.push({ navn: name, pris: price});
+        item.push({ navn: name, pris: price}); //bliver brugt til at tilføje varerne til listen
         itemName.value = "";
         itemPrice.value = "";
         updateList(); //tilføjer varer til listen
